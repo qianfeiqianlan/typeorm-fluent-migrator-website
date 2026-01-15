@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   cleanUrls: true,
   appearance: false,
-  base: "typeorm-fluent-migrator-website",
+  // base: "typeorm-fluent-migrator-website",
 
   // 全局 favicon 配置
   head: [
