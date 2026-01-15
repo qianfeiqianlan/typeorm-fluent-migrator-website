@@ -102,5 +102,5 @@ export class CreateIndexes1623456792000 implements MigrationInterface {
 ## Next Steps
 
 - Check out the [API Reference](/en/api/column-types) to see all available column types and constraints
-- Browse [Examples](/en/examples/) for more use cases
+- Browse [Examples](/en/examples/create-table) for more use cases
 - See [Comparison](/en/guide/comparison) to understand the differences from native TypeORM

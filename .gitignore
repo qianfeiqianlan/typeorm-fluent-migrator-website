@@ -1,2 +1,3 @@
 node_modules
 typeorm-fluent-migrator
+docs/.vitepress/dist/

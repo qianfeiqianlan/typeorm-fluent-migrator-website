@@ -102,5 +102,5 @@ export class CreateIndexes1623456792000 implements MigrationInterface {
 ## 下一步
 
 - 查看 [API 参考](/zh/api/column-types) 了解所有可用的列类型和约束
-- 查看 [示例](/zh/examples/) 了解更多使用场景
+- 查看 [示例](/zh/examples/create-table) 了解更多使用场景
 - 查看 [对比](/zh/guide/comparison) 了解与原生 TypeORM 的区别
