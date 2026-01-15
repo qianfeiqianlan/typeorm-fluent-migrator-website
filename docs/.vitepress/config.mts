@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   cleanUrls: true,
   appearance: false,
-  // base: "typeorm-fluent-migrator-website",
+  base: "/",
 
   // 全局 favicon 配置
   head: [
@@ -12,7 +12,7 @@ export default defineConfig({
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "/typeorm-fluent-migrator-website/favicon.ico",
+        href: "/favicon.ico",
       },
     ],
     [
@@ -20,14 +20,14 @@ export default defineConfig({
       {
         rel: "shortcut icon",
         type: "image/x-icon",
-        href: "/typeorm-fluent-migrator-website/favicon.ico",
+        href: "/favicon.ico",
       },
     ],
     [
       "link",
       {
         rel: "apple-touch-icon",
-        href: "/typeorm-fluent-migrator-website/favicon.ico",
+        href: "/favicon.ico",
       },
     ],
   ],
