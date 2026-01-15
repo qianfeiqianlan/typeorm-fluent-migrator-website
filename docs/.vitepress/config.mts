@@ -3,16 +3,33 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   cleanUrls: true,
   appearance: false,
-  base: "/typeorm-flunt-migrator-website/",
+  base: "typeorm-fluent-migrator-website",
 
   // 全局 favicon 配置
   head: [
-    ["link", { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     [
       "link",
-      { rel: "shortcut icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/typeorm-fluent-migrator-website/favicon.ico",
+      },
     ],
-    ["link", { rel: "apple-touch-icon", href: "/favicon.ico" }],
+    [
+      "link",
+      {
+        rel: "shortcut icon",
+        type: "image/x-icon",
+        href: "/typeorm-fluent-migrator-website/favicon.ico",
+      },
+    ],
+    [
+      "link",
+      {
+        rel: "apple-touch-icon",
+        href: "/typeorm-fluent-migrator-website/favicon.ico",
+      },
+    ],
   ],
 
   locales: {
