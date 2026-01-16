@@ -39,49 +39,67 @@ export class CreateUsersTable1623456789000 implements MigrationInterface {
 ### 修改表
 
 ```typescript
-export class AddPhoneColumn1623456790000 implements MigrationInterface {
+export class AlterUsersTable1623456790000 implements MigrationInterface {
+    async up(queryRunner: QueryRunner): Promise<void> {
+        await FL.use(queryRunner)
+            .alter.table('users')
+            .dropColumn('oldStatus')
+            .execute();
+    }
+
+    async down(queryRunner: QueryRunner): Promise<void> {
+        await FL.use(queryRunner)
+            .alter.table('users')
+            .addColumn('oldStatus').varchar(50).nullable
+            .execute();
+    }
+}
+```
+
+### 添加列
+
+```typescript
+export class AddPhoneColumn1623456791000 implements MigrationInterface {
     async up(queryRunner: QueryRunner): Promise<void> {
         await FL.use(queryRunner)
             .alter.table('users')
             .addColumn('phone').varchar(20).nullable
-            .dropColumn('oldStatus')
-            .alterColumn('name').varchar(100).notNull.execute();
+            .execute();
     }
 
     async down(queryRunner: QueryRunner): Promise<void> {
         await FL.use(queryRunner)
             .alter.table('users')
             .dropColumn('phone')
-            .addColumn('oldStatus').varchar(50).nullable
-            .alterColumn('name').varchar(255).notNull.execute();
+            .execute();
     }
 }
 ```
 
-### 外键
+### 修改列
 
 ```typescript
-export class CreatePostsTable1623456791000 implements MigrationInterface {
+export class AlterNameColumn1623456792000 implements MigrationInterface {
     async up(queryRunner: QueryRunner): Promise<void> {
         await FL.use(queryRunner)
-            .create.table('posts')
-            .column('id').int.primary.autoIncrement
-            .column('title').varchar(100).notNull
-            .column('content').text.nullable
-            .column('authorId').int.notNull.references('users', 'id').onDelete('CASCADE').onUpdate('RESTRICT')
+            .alter.table('users')
+            .alterColumn('name').varchar(100).notNull
             .execute();
     }
 
     async down(queryRunner: QueryRunner): Promise<void> {
-        await FL.use(queryRunner).drop.table('posts');
+        await FL.use(queryRunner)
+            .alter.table('users')
+            .alterColumn('name').varchar(255).notNull
+            .execute();
     }
 }
 ```
 
-### 索引
+### 添加索引
 
 ```typescript
-export class CreateIndexes1623456792000 implements MigrationInterface {
+export class CreateIndexes1623456793000 implements MigrationInterface {
     async up(queryRunner: QueryRunner): Promise<void> {
         await FL.use(queryRunner).create.index('idx_users_email').on('users').column('email').unique.execute();
 
@@ -95,6 +113,26 @@ export class CreateIndexes1623456792000 implements MigrationInterface {
     async down(queryRunner: QueryRunner): Promise<void> {
         await FL.use(queryRunner).drop.index('users', 'idx_users_email');
         await FL.use(queryRunner).drop.index('posts', 'idx_posts_author_status');
+    }
+}
+```
+
+### 外键
+
+```typescript
+export class CreatePostsTable1623456794000 implements MigrationInterface {
+    async up(queryRunner: QueryRunner): Promise<void> {
+        await FL.use(queryRunner)
+            .create.table('posts')
+            .column('id').int.primary.autoIncrement
+            .column('title').varchar(100).notNull
+            .column('content').text.nullable
+            .column('authorId').int.notNull.references('users', 'id').onDelete('CASCADE').onUpdate('RESTRICT')
+            .execute();
+    }
+
+    async down(queryRunner: QueryRunner): Promise<void> {
+        await FL.use(queryRunner).drop.table('posts');
     }
 }
 ```

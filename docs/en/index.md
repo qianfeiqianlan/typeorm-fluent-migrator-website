@@ -21,13 +21,13 @@ hero:
 
 features:
   - icon: 🎯
-    title: Fluent API
+    title: Chained API
     details: Write migrations like natural language with chainable methods, making code highly readable
   - icon: 🔒
-    title: Type-Safe
+    title: Strongly Typed
     details: Full TypeScript support with IntelliSense autocomplete, catch errors at compile time
   - icon: 🚀
-    title: Less Boilerplate
+    title: Less Code
     details: Reduce migration code by 50-70% compared to native TypeORM, dramatically improve productivity
   - icon: 🗄️
     title: Database Agnostic
