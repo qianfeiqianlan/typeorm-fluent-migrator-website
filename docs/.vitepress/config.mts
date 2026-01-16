@@ -30,6 +30,19 @@ export default defineConfig({
         href: "/favicon.ico",
       },
     ],
+    [
+      "script",
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4b935b7d700dd0f1ad85695ff96160cb";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `,
+    ],
   ],
 
   locales: {
