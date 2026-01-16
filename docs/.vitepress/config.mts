@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
   cleanUrls: true,
-  appearance: false,
+  // appearance: false,
   base: "/",
 
   // 全局 favicon 配置
@@ -98,6 +98,10 @@ export default defineConfig({
             },
           ],
         },
+        footer: {
+          message: "Released under the MIT License.",
+          copyright: "Copyright © 2026-present TypeORM Fluent Migrator Project",
+        },
       },
     },
     // 英文 locale
@@ -159,6 +163,10 @@ export default defineConfig({
               ],
             },
           ],
+        },
+        footer: {
+          message: "Released under the MIT License.",
+          copyright: "Copyright © 2026-present TypeORM Fluent Migrator Project",
         },
       },
     },
